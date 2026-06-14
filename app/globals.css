@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-libero-red: #E8392A;
+  --color-libero-dark: #1a1a1a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,71 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Reset cho content sách */
+#book-viewer table { border-collapse: collapse; width: 100%; margin: 1.5rem 0; font-size: 0.9em; }
+#book-viewer td, #book-viewer th { border: 1px solid #ccc; padding: 10px 14px; vertical-align: top; }
+.dark #book-viewer td, .dark #book-viewer th { border: 1px solid #444; }
+#book-viewer th { font-weight: bold; background-color: rgba(0, 0, 0, 0.02); }
+.dark #book-viewer th { background-color: rgba(255, 255, 255, 0.02); }
+#book-viewer td ul, #book-viewer td ol { padding-left: 1.2em; margin-bottom: 0; margin-top: 0.25rem; }
+#book-viewer img { max-width: 100%; height: auto; border-radius: 8px; margin: 1.5rem auto; display: block; }
+#book-viewer ul { list-style-type: disc; padding-left: 1.5em; margin-bottom: 1.25rem; }
+#book-viewer ol { list-style-type: decimal; padding-left: 1.5em; margin-bottom: 1.25rem; }
+#book-viewer h1 { font-size: 2.25rem; font-weight: 800; margin-top: 2.25rem; margin-bottom: 1.25rem; line-height: 1.2; }
+#book-viewer h2 { font-size: 1.75rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; line-height: 1.3; }
+#book-viewer h3 { font-size: 1.35rem; font-weight: 600; margin-top: 1.75rem; margin-bottom: 0.75rem; line-height: 1.4; }
+#book-viewer p { margin-bottom: 1.25rem; line-height: 1.8; }
+#book-viewer blockquote { border-left: 4px solid var(--color-libero-red); padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: #4b5563; }
+.dark #book-viewer blockquote { color: #9ca3af; }
+
+/* Link styling inside book content */
+#book-viewer a {
+  color: var(--color-libero-red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s ease-in-out;
+}
+.dark #book-viewer a {
+  color: #ff6b5c;
+}
+#book-viewer a:hover {
+  color: #c62417;
+}
+.dark #book-viewer a:hover {
+  color: #ff8a7d;
+}
+
+/* Footnotes superscript styling */
+#book-viewer sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+}
+
+/* Figcaption styling */
+#book-viewer figcaption, #book-viewer .figcaption {
+  text-align: center;
+  font-size: 0.875em;
+  font-style: italic;
+  color: #4b5563;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.dark #book-viewer figcaption, .dark #book-viewer .figcaption {
+  color: #9ca3af;
+}
+
+/* Custom serif and sans font options for book content */
+#book-viewer.font-serif {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+#book-viewer.font-sans {
+  font-family: var(--font-sans), system-ui, sans-serif;
 }

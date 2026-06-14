@@ -1,0 +1,13 @@
+[
+  {
+    "id": "entrepreneurship",
+    "title": "Entrepreneurship",
+    "titleVn": "Khởi nghiệp",
+    "author": "OpenStax",
+    "coverColor": "#1a73e8",
+    "coverTextColor": "#ffffff",
+    "chapters": 15,
+    "description": "Hướng dẫn toàn diện về khởi nghiệp — từ tư duy đến thực thi.",
+    "tags": ["Kinh doanh", "Khởi nghiệp"]
+  }
+]
